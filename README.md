@@ -8,3 +8,4 @@ Currently it allows you to:
 * Bind case classes in SQL statements
 * Return Options from SQL queries
 * Use function literal syntax when running code in a DB transaction
+* Bind a simple Scala.Option types to SQL statement arguments
