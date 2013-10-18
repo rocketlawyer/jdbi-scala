@@ -41,5 +41,12 @@ pomExtra := (
     <url>git@github.com:gilt/jdbi-scala.git</url>
     <connection>scm:git:git@github.com:gilt/jdbi-scala.git</connection>
   </scm>
+  <developers>
+    <developer>
+      <id>kscaldef</id>
+      <name>Kevin Scaldeferri</name>
+      <url>https://github.com/kscaldef</url>
+    </developer>
+  </developers>
 )
 
