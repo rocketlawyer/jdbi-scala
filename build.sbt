@@ -3,27 +3,33 @@ name := "jdbi-scala"
 
 organization := "com.gilt.jdbi-scala"
 
-crossScalaVersions := Seq("2.10.2","2.9.3","2.9.2", "2.9.1")
+crossScalaVersions := Seq("2.11.1","2.10.4")
 
-scalaVersion := "2.10.2"
+scalaVersion := "2.11.1"
 
 libraryDependencies ++= Seq(
-  "org.jdbi" % "jdbi" % "2.51",
+  "org.jdbi" % "jdbi" % "2.55",
   "junit" % "junit" % "4.11" % "test",
-  "org.scalatest" %% "scalatest" % "1.9.2" % "test"
+  "org.scalatest" %% "scalatest" % "2.2.0" % "test"
 )
 
-resolvers ++= Seq(
-  "Sonatype.org Snapshots" at "http://oss.sonatype.org/content/repositories/snapshots",
-  "Sonatype.org Releases" at "http://oss.sonatype.org/service/local/staging/deploy/maven2"
+scalacOptions in Compile ++= Seq(
+  "-encoding","UTF-8",
+  "-target:jvm-1.7",
+  "-deprecation",
+  "-unchecked",
+  "-explaintypes",
+  "-feature"
 )
 
 publishTo <<= version { (v: String) =>
-  val nexus = "https://oss.sonatype.org/"
+  // val nexus = "https://oss.sonatype.org/"
+  val nexus = "http://f1tstbld001/nexus"
   if (v.trim.endsWith("SNAPSHOT"))
-    Some("snapshots" at nexus + "content/repositories/snapshots")
+    Some("snapshots" at nexus + "/content/repositories/snapshots")
   else
-    Some("releases"  at nexus + "/service/local/staging/deploy/maven2")
+    Some("releases"  at nexus + "/content/repositories/releases")
+    // Some("releases"  at nexus + "/service/local/staging/deploy/maven2")
 }
 
 publishMavenStyle := true
