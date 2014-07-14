@@ -19,12 +19,13 @@ scalacOptions in Compile ++= Seq(
   "-deprecation",
   "-unchecked",
   "-explaintypes",
-  "-feature"
+  "-feature",
+  "-language:implicitConversions"
 )
 
 publishTo <<= version { (v: String) =>
   // val nexus = "https://oss.sonatype.org/"
-  val nexus = "http://f1tstbld001/nexus"
+  val nexus = "http://f1tst-linbld001/nexus"
   if (v.trim.endsWith("SNAPSHOT"))
     Some("snapshots" at nexus + "/content/repositories/snapshots")
   else
