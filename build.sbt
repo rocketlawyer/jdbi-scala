@@ -24,13 +24,11 @@ scalacOptions in Compile ++= Seq(
 )
 
 publishTo <<= version { (v: String) =>
-  // val nexus = "https://oss.sonatype.org/"
-  val nexus = "http://f1tst-linbld001/nexus"
+  val nexus = "https://oss.sonatype.org/"
   if (v.trim.endsWith("SNAPSHOT"))
     Some("snapshots" at nexus + "/content/repositories/snapshots")
   else
-    Some("releases"  at nexus + "/content/repositories/releases")
-    // Some("releases"  at nexus + "/service/local/staging/deploy/maven2")
+    Some("releases"  at nexus + "/service/local/staging/deploy/maven2")
 }
 
 publishMavenStyle := true
