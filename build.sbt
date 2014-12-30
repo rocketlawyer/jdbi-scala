@@ -3,14 +3,14 @@ name := "jdbi-scala"
 
 organization := "com.gilt.jdbi-scala"
 
-crossScalaVersions := Seq("2.10.2","2.9.3","2.9.2", "2.9.1")
+crossScalaVersions := Seq("2.11.4", "2.10.4")
 
-scalaVersion := "2.10.2"
+scalaVersion := "2.11.4"
 
 libraryDependencies ++= Seq(
-  "org.jdbi" % "jdbi" % "2.51",
-  "junit" % "junit" % "4.11" % "test",
-  "org.scalatest" %% "scalatest" % "1.9.2" % "test"
+  "org.jdbi" % "jdbi" % "2.55",
+  "junit" % "junit" % "4.12" % "test",
+  "org.scalatest" %% "scalatest" % "2.2.3" % "test"
 )
 
 resolvers ++= Seq(
