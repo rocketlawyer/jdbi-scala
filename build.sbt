@@ -8,9 +8,8 @@ crossScalaVersions := Seq("2.11.7","2.10.4")
 scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq(
-  "org.jdbi" % "jdbi" % "2.55",
-  "junit" % "junit" % "4.11" % "test",
-  "org.scalatest" %% "scalatest" % "2.2.0" % "test"
+  "org.jdbi" % "jdbi" % "2.63",
+  "org.scalatest" %% "scalatest" % "2.2.5" % Test
 )
 
 scalacOptions in Compile ++= Seq(
